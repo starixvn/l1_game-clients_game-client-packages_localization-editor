@@ -42215,7 +42215,7 @@ var _default = {
                         isCollectingHasWrongDir = (0, _vue.computed)(function() {
                             return collections.value.some(function(item) {
                                 return item.value.dirs.items.some(function(item) {
-                                    return !Editor.Utils.Path.contains(_global.ProjectAssetPath, (0, _path.join)(_global.ProjectAssetPath, item.value)) || !(0, _fs.existsSync)((0, _path.join)(_global.ProjectAssetPath, item.value));
+                                    return true;//!Editor.Utils.Path.contains(_global.ProjectAssetPath, (0, _path.join)(_global.ProjectAssetPath, item.value)) || !(0, _fs.existsSync)((0, _path.join)(_global.ProjectAssetPath, item.value));
                                 });
                             });
                         });

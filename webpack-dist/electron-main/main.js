@@ -27005,7 +27005,7 @@ var ConfigDirectoryStructure = /*#__PURE__*/ function(DirectoryStructure) {
     _proto.init = function init(base) {
         _get(_getPrototypeOf(ConfigDirectoryStructure.prototype), "init", this).call(this, base);
         this.root = (0, _path.join)(this.base, _global.MainName);
-        this.translateData = (0, _path.join)(this.root, "translate-data");
+        this.translateData = (0, _path.join)(this.root, "../extensions/shared-components/translate-data");
         this.config = (0, _path.join)(this.root, "".concat(_global.MainName, ".yaml"));
         this.indexData = (0, _path.join)(this.translateData, "index.yaml");
     };
