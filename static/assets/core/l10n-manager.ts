@@ -253,4 +253,9 @@ export class L10nManager {
 
 const l10n: L10nManager = L10nManager.l10n;
 
+
+declare global {
+    interface Window { l10n: any; }
+}
+window.l10n = l10n;
 export default l10n;
