@@ -26,6 +26,12 @@ if (cclegacy.GAME_VIEW || EDITOR) { // for Editor
         if (urlParams.has("lang")) {
             language = mapLanguage(urlParams.get("lang"));
         }
+        else if(urlParams.has("params")){
+            const decodedParams = new URLSearchParams(atob(urlParams.get("params")));
+            if(decodedParams.has("lang")){
+                language = mapLanguage(decodedParams.get("lang"));
+            }
+        }
 
         return language;
     }         
