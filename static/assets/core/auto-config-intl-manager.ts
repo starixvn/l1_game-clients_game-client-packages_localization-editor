@@ -21,7 +21,8 @@ if (cclegacy.GAME_VIEW || EDITOR) { // for Editor
     }
 
     const getLanguageFromUrlOrLocalStorage = () => {
-        let language = localStorage.getItem(`current_language`) ?? "en";
+        let languageFromLocalStorage = localStorage.getItem(`current_language`);
+        let language = languageFromLocalStorage ? JSON.parse(languageFromLocalStorage) : "en";
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has("lang")) {
             language = mapLanguage(urlParams.get("lang"));
@@ -37,7 +38,7 @@ if (cclegacy.GAME_VIEW || EDITOR) { // for Editor
     }         
 
     const language = getLanguageFromUrlOrLocalStorage();
-    localStorage.setItem(`current_language`, language);
+    localStorage.setItem(`current_language`, JSON.stringify(language));
 
     game.onPostProjectInitDelegate.add(
         () => l10n.createIntl({language}),
